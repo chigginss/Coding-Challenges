@@ -103,6 +103,10 @@ class SetGame(object):
                 (len(shades) == len(cards) or len(shades) == 1) and
                 (len(counts) == len(cards) or len(counts) == 1))
 
+    def find_set(self):
+
+
+
 
 
 
