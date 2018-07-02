@@ -87,6 +87,22 @@ class SetGame(object):
             card = random.choice(self.deck)
             self.table.append(card)
             self.deck.remove(card)
+
+    def find_set(self):
+
+        #check to see if there are enough cards
+
+        if len(self.table) < 3:
+            print "Not enough cards to have a Set"
+            return False 
+
+        table = list(self.table)
+        for i in range(len(table)-2): #1-1
+            for j in range(i+1, len(table)-1): #2-2
+                for k in range(i+2, len(table)): #3-3
+                    if SetGame.is_set([table[i], table[j], table[k]]):
+                        print "{table[i]},{table[j]},{table[k]} is a Set!".format(table[i], table[j], table[k])
+                        return True
     
     @staticmethod
     def is_set(cards):
@@ -103,21 +119,6 @@ class SetGame(object):
                 (len(shades) == len(cards) or len(shades) == 1) and
                 (len(counts) == len(cards) or len(counts) == 1))
 
-    def find_set(self):
-
-              #check to see if there are enough cards
-
-        if len(self.table) < 3:
-            print "Not enough cards to have a Set"
-            return False 
-
-        table = list(self.table)
-        for i in range(len(table)-2): #1-1
-            for j in range(i+1, len(table)-1): #2-2
-                for k in range(i+2, len(table)): #3-3
-                    if SetGame.is_set([table[i], table[j], table[k]]):
-                        print "{table[i]},{table[j]},{table[k]} is a Set!".format(table[i], table[j], table[k])
-                        return True
 
 testgame = SetGame()
 assert len(testgame.deck) == 27, "Deck must instantiate with 27 cards"
