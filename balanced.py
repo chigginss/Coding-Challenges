@@ -4,20 +4,27 @@
 
 #     def 
 
+from python.basics.stack import Stack
+
 def is_balanced(paran_str):
 
-    new_stack = []
+    new_stack = Stack()
+    balanced = True
 
     for char in paran_str:
         if char == "(":
-            new_stack.append(char)
-        elif char == ")" and len(new_stack) != 0:
-            new_stack.pop(char)
+            new_stack.push(char)
+        else:
+            if new_stack.isEmpty():
+                balanced = False
+            else:
+                new_stack.pop()
 
-    if len(new_stack) != 0:
-        print False
+
+    if balanced and new_stack.isEmpty():
+        return False
     else:
-        print True
+        return True
 
 is_balanced("())((")
 is_balanced("()()()")
