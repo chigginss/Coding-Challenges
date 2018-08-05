@@ -4,32 +4,6 @@
 #         self.val = x
 #         self.left = None
 #         self.right = None
-
-class Solution(object):
-    def mergeTrees(self, t1, t2):
-        """
-        :type t1: TreeNode
-        :type t2: TreeNode
-        :rtype: TreeNode
-        """
-        
-        if not t1 or t2:
-            return t1 or t2
-        
-        #create one node from both trees
-        root = TreeNode(t1.val + t2.val)
-        rootArr = [root]
-        t1Arr = [t1]
-        t2Arr = [t2]
-        
-        # use pop to get singular values from t1 and t2
-        while t1Arr and t2Arr:
-            node = rootArr.pop()
-            n1 = t1Arr.pop()
-            n2 = t2Arr.pop()
-        
-        
-        
         
             
   def mergeTrees(self, t1, t2):
@@ -72,30 +46,4 @@ class Solution(object):
         treeArr.clear()
         return root      
         
-        
-    def traverseTrees(self, t1, t2)
-        new_tree = set()
-        
-        if self.root is None:
-            return None
-        
-        while self.left in t1 is not None:
-            new_tree.add(self.val)
-            self.left = self.left.left
-        
-        while self.right in t1 is not None:
-            new_tree.add(self.val)
-            self.right = self.right.right
-        
-        while self.left in t2 is not None:
-            new_tree.add(self.val)
-            self.left = self.left.left
-            
-        while self.right in t2 is not None:
-            new_tree.add(self.val)
-            self.right = self.right.right
-            
-        for item in new_tree:
-            
-            
         
