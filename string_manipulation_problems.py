@@ -3,6 +3,8 @@
 Are two strings anagrams, can you change one letter and have the same strings, 
 how many characters do you have to delete to have the same strings
 
+Problems from Cracking the Coding Interview, Pramp and Hackbright 
+
 """
 
 # simple: Are two strings anagrams of each other?
