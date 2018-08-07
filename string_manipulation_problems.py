@@ -20,6 +20,32 @@ def is_anagram(str1, str2):
 # this is assuming strings are not case sensitive 
 # runtime is 0(ab) because the sorted function 
 
+#second solution 
+#count how many letters and then compare counts / letters
+def is_anagram(str1, str2):
+
+    new_dict = {}
+
+    for item in str1:
+        if item not in new_dict:
+            new_dict[item] = 1
+        else:
+            new_dict[item] += 1
+
+    for item in str2:
+        if item not in new_dict:
+            return False
+        else:
+            new_dict[item] -= 1
+
+    counts = new_dict.values()
+
+    for item in counts:
+        if item > 0:
+            return False
+        else:
+            return True
+
 ################################################################################
 
 # more complicated: One Edit Away 
