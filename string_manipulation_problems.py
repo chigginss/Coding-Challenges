@@ -147,9 +147,7 @@ def one_away(str1, str2):
 
 # most complicated: How many deletions 
 
-""" The solution above takes O(N⋅M) space since we save all previous values, but notice that opt(i,j) requires only opt(i-1,j), opt(i,j-1) and opt(i-1,j-1). 
-Thus, by iterating first through 0 ≤ i ≤ str1Len, and then for every i calculating 0 ≤ j ≤ str2Len, we need only to save the values for the current i and the last i. 
-This will reduce the space needed for the function. """
+"""  """
 
 Pseudocode:
 
@@ -183,4 +181,7 @@ function deletionDistance(str1, str2):
     return prevMemo[str2Len]
 
 # Time Complexity: the time complexity stays the same, i.e. O(N⋅M), since we still run a nested loop with N⋅M iterations.
+# The solution above takes O(N⋅M) space since we save all previous values, but notice that opt(i,j) requires only opt(i-1,j), opt(i,j-1) and opt(i-1,j-1). 
+# Thus, by iterating first through 0 ≤ i ≤ str1Len, and then for every i calculating 0 ≤ j ≤ str2Len, we need only to save the values for the current i and the last i. 
+# This will reduce the space needed for the function.
 # Space Complexity: O(min(N,M)), as we only need to hold two rows of the double array.
