@@ -27,3 +27,39 @@ class bankAccount
         @savings = saving_deposit
     end
 
+    def deposit (account, amount)
+        if account == "checking"
+            @checking += amount
+        elsif account == "savings"
+            @saving += amount
+        else
+            p "no account"
+    end
+
+    def withdraw (account, amount)
+        if account == "checking"
+            if amount > @checking
+                p "insufficient funds"
+            else
+                @checking -= amount 
+        elsif account == "savings"
+            if amount > @savings
+                p "insufficient funds"
+            else
+                @savings -= amount 
+        else
+            p "no account"
+    end
+
+    def account_info
+        p @account_number
+        p @checking
+        p @savings
+        p @@interest_rate
+    end
+
+
+
+
+
+
