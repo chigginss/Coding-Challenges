@@ -13,18 +13,19 @@ class bankAccount
     @@number_of_accounts = 0
     @@interest_rate = 1.25
 
-    attr_accesor: account_number, checking, saving
+    attr_writer: :account_number, :checking, :saving
     
     def create_account_number
         rand(10**16)
     end
    
     public
-
+    attr_reader :`
     def initialize (checking_deposit, saving_deposit)
         @account_number = create_account_number
         @checking = checking_deposit
         @savings = saving_deposit
+        @@number_of_accounts += 1
     end
 
     def deposit (account, amount)
@@ -58,6 +59,25 @@ class bankAccount
         p @@interest_rate
     end
 
+    def total_money
+        p @checking + @savings
+    end
+
+    def total_accounts
+        p @@number_of_accounts
+    end
+
+    def get_checking
+        @checking
+    end
+
+    def get_savings
+        @savings
+    end
+end 
+
+my_account = bankAccount.new(500,2000)
+# p mine.deposit("checking")
 
 
 
