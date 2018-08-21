@@ -6,21 +6,21 @@ practice with Ruby OOP
 
 """
 
-class bankAccount
+class BankAccount
 
     private 
     
     @@number_of_accounts = 0
     @@interest_rate = 1.25
 
-    attr_writer: :account_number, :checking, :saving
+    attr_writer :account_number, :checking, :saving
     
     def create_account_number
         rand(10**16)
     end
    
     public
-    attr_reader :`
+    
     def initialize (checking_deposit, saving_deposit)
         @account_number = create_account_number
         @checking = checking_deposit
@@ -35,6 +35,7 @@ class bankAccount
             @saving += amount
         else
             p "no account"
+        end
     end
 
     def withdraw (account, amount)
@@ -43,13 +44,16 @@ class bankAccount
                 p "insufficient funds"
             else
                 @checking -= amount 
+            end
         elsif account == "savings"
             if amount > @savings
                 p "insufficient funds"
             else
                 @savings -= amount 
+            end
         else
             p "no account"
+        end
     end
 
     def account_info
@@ -76,7 +80,8 @@ class bankAccount
     end
 end 
 
-my_account = bankAccount.new(500,2000)
+my_account = BankAccount.new(500,2000)
+p my_account.account_info
 # p mine.deposit("checking")
 
 
